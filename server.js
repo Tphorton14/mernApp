@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 // http request logger
 app.use(morgan('tiny'));
 
-// defining routes withn server
+// defining routes within server
 app.get('/api', (req, res) => {
     const data = {
         username: 'taylorhorton',
@@ -28,5 +28,5 @@ app.get('/api', (req, res) => {
     res.json(data);
 });
 
-// consologging that server is listening
+// consologging that server is listening --- using backtick
 app.listen(PORT, console.log(`Server is listening at ${PORT}`));
