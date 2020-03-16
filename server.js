@@ -31,16 +31,39 @@ const BlogPostSchema = new Schema ({
 // Creating Model
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 
+// Save user data in MongoDB
+const data = {
+    title: 'Welcome to my Blog site!',
+    body: 'This is practice for a MERN stack site'
+};
+
+// instance of the Model
+const newBlogPost = new BlogPost(data);
+
+// newBlogPost.save((err) => {
+//     if (err) {
+//         console.log('ERROR, Data not saved')
+//     } else {
+//         console.log('Data has been saved!')
+//     }
+// });
+
 // http request logger
 app.use(morgan('tiny'));
 
 // defining routes within server
 app.get('/api', (req, res) => {
-    const data = {
-        username: 'taylorhorton',
-        age: 10
-    };
-    res.json(data);
+
+    BlogPost.find({ })
+        .then((data) => {
+            console.log('Data: ', data);
+            res.json(data);
+        })
+        .catch((err) => {
+            console.log('Error: ', err);
+        });
+
+   
 });
 
 app.get('/api', (req, res) => {
