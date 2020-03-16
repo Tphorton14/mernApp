@@ -12,10 +12,24 @@ mongoose.connect('mongodb://localhost/mern_app', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-
+// Verfy mongoose connection 
 mongoose.connection.on('connected', () => {
     console.log('Mongoooose has been connected!');
 });
+
+// Creating Schema
+const Schema = mongoose.Schema;
+const BlogPostSchema = new Schema ({
+    title: String,
+    body: String,
+    date: {
+        type: String,
+        default: Date.now()
+    }
+});
+
+// Creating Model
+const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 
 // http request logger
 app.use(morgan('tiny'));
