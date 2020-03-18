@@ -3,6 +3,8 @@ const express = require('express');
 //create express router
 const router = express.Router();
 
+const BlogPost = require('../models/blogPost')
+
 
 // defining routes within server -- also sending data back to the client
 router.get('/api', (req, res) => {
