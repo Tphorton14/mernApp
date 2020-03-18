@@ -20,22 +20,6 @@ mongoose.connection.on('connected', () => {
 });
 
 
-// Save user data in MongoDB
-const data = {
-    title: 'Welcome to my Blog site!',
-    body: 'This is practice for a MERN stack site'
-};
-
-// instance of the Model
-const newBlogPost = new BlogPost(data);
-
-// newBlogPost.save((err) => {
-//     if (err) {
-//         console.log('ERROR, Data not saved')
-//     } else {
-//         console.log('Data has been saved!')
-//     }
-// });
 
 // http request logger
 app.use(morgan('tiny'));
