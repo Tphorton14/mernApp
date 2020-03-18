@@ -23,7 +23,7 @@ mongoose.connection.on('connected', () => {
 // http request logger
 app.use(morgan('tiny'));
 // configure routes after HTTP request
-app.use('/', routes);
+app.use('/api', routes);
 
 
 // consologging that server is listening --- using backtick

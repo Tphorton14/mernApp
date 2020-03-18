@@ -7,7 +7,7 @@ const BlogPost = require('../models/blogPost');
 
 
 // defining routes within server -- also sending data back to the client
-router.get('/api', (req, res) => {
+router.get('/', (req, res) => {
 
     BlogPost.find({ })
         .then((data) => {
@@ -21,7 +21,7 @@ router.get('/api', (req, res) => {
    
 });
 
-router.get('/api/name', (req, res) => {
+router.get('/name', (req, res) => {
     const data = {
         username: 'josh',
         age: 10
