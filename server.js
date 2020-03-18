@@ -17,19 +17,6 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoooose has been connected!');
 });
 
-// Creating Schema
-const Schema = mongoose.Schema;
-const BlogPostSchema = new Schema ({
-    title: String,
-    body: String,
-    date: {
-        type: String,
-        default: Date.now()
-    }
-});
-
-// Creating Model
-const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 
 // Save user data in MongoDB
 const data = {
@@ -51,28 +38,6 @@ const newBlogPost = new BlogPost(data);
 // http request logger
 app.use(morgan('tiny'));
 
-// defining routes within server
-app.get('/api', (req, res) => {
-
-    BlogPost.find({ })
-        .then((data) => {
-            console.log('Data: ', data);
-            res.json(data);
-        })
-        .catch((err) => {
-            console.log('Error: ', err);
-        });
-
-   
-});
-
-app.get('/api', (req, res) => {
-    const data = {
-        username: 'josh',
-        age: 10
-    };
-    res.json(data);
-});
 
 // consologging that server is listening --- using backtick
 app.listen(PORT, console.log(`Server is listening on ${PORT}`));
