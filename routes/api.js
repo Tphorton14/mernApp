@@ -21,7 +21,7 @@ router.get('/api', (req, res) => {
    
 });
 
-router.get('/api', (req, res) => {
+router.get('/api/name', (req, res) => {
     const data = {
         username: 'josh',
         age: 10

@@ -20,7 +20,6 @@ mongoose.connection.on('connected', () => {
 });
 
 
-
 // http request logger
 app.use(morgan('tiny'));
 // configure routes after HTTP request
