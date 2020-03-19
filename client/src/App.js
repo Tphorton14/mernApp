@@ -1,5 +1,6 @@
 
 import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component {
 
@@ -26,8 +27,18 @@ class App extends React.Component {
       body: this.state.body
     };
 
-    
-
+    //creating post request
+    axios({
+      url: '',
+      method: "POST",
+      data: payload
+    })
+      .then(() => {
+        console.log('Data has been sent to the server!!');
+      })
+      .catch(() => {
+        console.log('SERVER ERROR.....')
+      });
   };
 
   render() {
