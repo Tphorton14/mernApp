@@ -18,8 +18,15 @@ class App extends React.Component {
     });
   };
 
-  submit = () => {
+  submit = (event) => {
+    event.preventDefault();
 
+    const payload = {
+      title: this.state.title,
+      body: this.state.body
+    };
+
+    
 
   };
 
