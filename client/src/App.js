@@ -15,8 +15,13 @@ class App extends React.Component {
 
     this.setState({
       [name]: value
-    })
-  }
+    });
+  };
+
+  submit = () => {
+
+
+  };
 
   render() {
 
@@ -26,7 +31,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>Welcome to my App!!</h1>
-        <form>
+        <form onSubmit={this.submit}>
           <div className='form-input'>
             <input
             type="text"
