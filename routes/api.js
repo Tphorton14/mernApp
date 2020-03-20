@@ -21,6 +21,14 @@ router.get('/', (req, res) => {
    
 });
 
+// back end receiving request from REACT server
+router.post('/save', (req, res) => {
+    console.log('Body: ', req.body)
+    res.json({
+        msg: 'We have successfuly received your data!'
+    });
+});
+
 router.get('/name', (req, res) => {
     const data = {
         username: 'josh',

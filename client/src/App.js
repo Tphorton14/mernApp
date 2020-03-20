@@ -27,7 +27,7 @@ class App extends React.Component {
       body: this.state.body
     };
 
-    //creating post request
+    //creating POST request
     axios({
       url: '',
       method: "POST",
