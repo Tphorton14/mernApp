@@ -63,6 +63,18 @@ class App extends React.Component {
     });
   };
 
+  displayBlogPost = (posts) => {
+    if (!posts.length) return null;
+
+    return posts.map((post, index) => {
+      <div key={index}>
+        <h3>{posts.title}</h3>
+        <p>{posts.body}</p>
+      </div>
+    })
+
+  };
+
   render() {
 
     console.log("State: ", this.state);
@@ -97,6 +109,10 @@ class App extends React.Component {
 
           <button>Submit</button>
         </form>
+        
+        <div className="blog-">
+          {}
+        </div>
       </div>
     );
   }
