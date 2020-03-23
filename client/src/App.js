@@ -9,10 +9,8 @@ class App extends React.Component {
     body: ''
   };
 
-  handleChange = (event) => {
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
+  handleChange = ({ target }) => {
+    const { name, value } = target;
 
     this.setState({
       [name]: value
