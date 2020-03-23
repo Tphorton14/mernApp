@@ -21,6 +21,7 @@ mongoose.connection.on('connected', () => {
 });
 
 
+app.use(cors());
 // http request logger
 app.use(morgan('tiny'));
 // configure routes after HTTP request
