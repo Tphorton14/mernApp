@@ -19,7 +19,7 @@ class App extends React.Component {
     axios.get('/api')
       .then((response) => {
         const data = response.data;
-        this.setState({ post: data });
+        this.setState({ posts: data });
         console.log('Data Has been recieved!!');
       })
       .catch(() => {
@@ -63,16 +63,18 @@ class App extends React.Component {
     });
   };
 
+
+  // function that displays user post
   displayBlogPost = (posts) => {
+
     if (!posts.length) return null;
 
-    return posts.map((post, index) => {
+    return posts.map((post, index) => (
       <div key={index}>
-        <h3>{posts.title}</h3>
-        <p>{posts.body}</p>
+        <h1>{post.title}</h1>
+        <p>{post.body}</p>
       </div>
-    })
-
+    ));
   };
 
   render() {
@@ -110,9 +112,10 @@ class App extends React.Component {
           <button>Submit</button>
         </form>
         
-        <div className="blog-">
-          {}
+        <div className="blog-post">
+          {this.displayBlogPost(this.state.posts)}
         </div>
+
       </div>
     );
   }
