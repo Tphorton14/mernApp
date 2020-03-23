@@ -2,7 +2,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
-const cors = require('cors');
 // built in Node mod
 const path = require('path');
 
@@ -21,7 +20,6 @@ mongoose.connection.on('connected', () => {
 });
 
 
-app.use(cors());
 // http request logger
 app.use(morgan('tiny'));
 // configure routes after HTTP request
