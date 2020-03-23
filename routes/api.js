@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
 
 // back end receiving request from REACT server
 router.post('/save', (req, res) => {
-    console.log('Body: ', req.body)
     const data = req.body;
 
     const newBlogPost = new BlogPost (data);
@@ -38,8 +37,6 @@ router.post('/save', (req, res) => {
             });
         }
     });
-
-    
 });
 
 router.get('/name', (req, res) => {
