@@ -19,6 +19,11 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoooose has been connected!');
 });
 
+// middleware that parse te json or urlencoded 
+app.use(express.json());
+                            // extended should be "true" is deep nested object
+app.use(express.urlencoded({ extended: false }));
+
 
 // http request logger
 app.use(morgan('tiny'));
