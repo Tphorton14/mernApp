@@ -19,7 +19,7 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoooose has been connected!');
 });
 
-// middleware that parse te json or urlencoded 
+// middleware that parse te json or urlencoded -- making them avalible at req.body @ api.js
 app.use(express.json());
                             // extended should be "true" is deep nested object
 app.use(express.urlencoded({ extended: false }));
