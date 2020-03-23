@@ -6,7 +6,21 @@ class App extends React.Component {
 
   state = {
     title: '',
-    body: ''
+    body: '',
+    posts: []
+  };
+
+  getBlogPost = () => {
+
+    axios.get('/api')
+      .then((response) => {
+        const data = response.data;
+        this.setState({ post: data });
+        console.log('Data Has been recieved!!');
+      })
+      .catch(() => {
+        alert('No data has been received');
+      })
   };
 
   handleChange = ({ target }) => {
