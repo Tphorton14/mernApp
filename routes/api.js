@@ -24,9 +24,23 @@ router.get('/', (req, res) => {
 // back end receiving request from REACT server
 router.post('/save', (req, res) => {
     console.log('Body: ', req.body)
-    res.json({
-        msg: 'We have successfuly received your data!'
+    const data = req.body;
+
+    const newBlogPost = new BlogPost (data);
+
+    // .save
+    newBlogPost.save((err) => {
+        if (err) {
+            res.status(500),json({ msg: 'Sorry, internal server errors.....'})
+        } else {
+            // BlogPost
+            res.json({
+                msg: 'DATA HAS BEEN SAVED!!'
+            });
+        }
     });
+
+    
 });
 
 router.get('/name', (req, res) => {
