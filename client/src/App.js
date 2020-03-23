@@ -10,6 +10,10 @@ class App extends React.Component {
     posts: []
   };
 
+  componentDidMount = () => {
+    this.getBlogPost();
+  }
+
   getBlogPost = () => {
 
     axios.get('/api')
