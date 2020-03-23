@@ -11,10 +11,7 @@ class App extends React.Component {
 
   handleChange = ({ target }) => {
     const { name, value } = target;
-
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value });
   };
 
   submit = (event) => {
@@ -34,10 +31,18 @@ class App extends React.Component {
     })
       .then(() => {
         console.log('Data has been sent to the server!!');
+        this.resetUserInputs();
       })
       .catch(() => {
         console.log('SERVER ERROR.....')
       });
+  };
+
+  resetUserInputs = () => {
+    this.setState({
+      title: '',
+      body: ''
+    });
   };
 
   render() {

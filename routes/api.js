@@ -26,16 +26,16 @@ router.post('/save', (req, res) => {
     const data = req.body;
 
     const newBlogPost = new BlogPost (data);
-    // .save
+    // .save to save data in new model 
     newBlogPost.save((err) => {
         if (err) {
             res.status(500),json({ msg: 'Sorry, internal server errors.....'})
-        } else {
-            // BlogPost
-            res.json({
-                msg: 'DATA HAS BEEN SAVED!!'
-            });
+            return;
         }
+        // BlogPost
+         return res.json({
+            msg: 'DATA HAS BEEN SAVED!!'
+        });
     });
 });
 
