@@ -101,7 +101,7 @@ class App extends React.Component {
           </div>
           <div className='form-input'>
             <textarea 
-            placeholder="Begin typing body here" 
+            placeholder="Begin typing blog here" 
             name="body" 
             cols="30" 
             rows="10" 
