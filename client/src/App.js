@@ -42,7 +42,7 @@ class App extends React.Component {
 
     //creating POST request
     axios({
-      // do not need http://localhost bc of proxy in client package.json
+      // do not need http: //localhost bc of proxy in client package.json
       url: '/api/save',
       method: "POST",
       data: payload
