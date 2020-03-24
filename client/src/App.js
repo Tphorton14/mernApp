@@ -113,7 +113,7 @@ class App extends React.Component {
             </textarea>
           </div>
 
-          <button>Submit</button>
+          <button className="submit">Submit</button>
         </form>
         
         <div className="blog-post">
