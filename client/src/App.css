@@ -10,9 +10,11 @@
 
 .blog-post_display {
   border: 1px solid lightgray;
-  
+  margin: 5px 0px;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .submit {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
