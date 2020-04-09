@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8080;
 
 const routes = require('./routes/api');
 
-mongoose.connect('mongodb://localhost/mern_app', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_app', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -29,6 +29,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan('tiny'));
 // configure routes after HTTP request
 app.use('/api', routes);
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
 
 
 // consologging that server is listening --- using backtick
