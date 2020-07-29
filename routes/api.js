@@ -39,13 +39,13 @@ router.post('/save', (req, res) => {
     });
 });
 
-router.get('/name', (req, res) => {
-    const data = {
-        username: 'josh',
-        age: 10
-    };
-    res.json(data);
-});
+// router.get('/name', (req, res) => {
+//     const data = {
+//         username: 'josh',
+//         age: 10
+//     };
+//     res.json(data);
+// });
 
 
 module.exports = router;
